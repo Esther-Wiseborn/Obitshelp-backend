@@ -6,116 +6,204 @@ export function Candle({ className = "" }: CandleProps) {
   return (
     <div className={`flex justify-center items-center ${className}`}>
       <svg 
-        width="80" 
-        height="120" 
-        viewBox="0 0 80 120" 
-        className="opacity-60"
+        width="100" 
+        height="140" 
+        viewBox="0 0 100 140" 
+        className="opacity-70"
       >
+        {/* Outer glow/halo */}
+        <ellipse 
+          cx="50" 
+          cy="18" 
+          rx="24" 
+          ry="30" 
+          fill="url(#outerGlow)" 
+          opacity="0.15"
+          className="flame-glow"
+        />
+        
         {/* Candle body */}
         <rect 
-          x="25" 
-          y="30" 
-          width="30" 
-          height="70" 
-          rx="2" 
-          fill="#f8f8f8" 
-          stroke="#d0d0d0" 
-          strokeWidth="1"
+          x="30" 
+          y="35" 
+          width="40" 
+          height="80" 
+          rx="3" 
+          fill="#f5f5f5" 
+          stroke="#e0e0e0" 
+          strokeWidth="0.5"
         />
         
         {/* Candle base */}
         <rect 
-          x="20" 
-          y="95" 
-          width="40" 
-          height="20" 
-          rx="3" 
-          fill="#e8e8e8" 
-          stroke="#c0c0c0" 
-          strokeWidth="1"
+          x="25" 
+          y="110" 
+          width="50" 
+          height="25" 
+          rx="4" 
+          fill="#f0f0f0" 
+          stroke="#d5d5d5" 
+          strokeWidth="0.5"
         />
         
         {/* Wick */}
         <line 
-          x1="40" 
-          y1="30" 
-          x2="40" 
-          y2="20" 
-          stroke="#2a2a2a" 
-          strokeWidth="2" 
+          x1="50" 
+          y1="35" 
+          x2="50" 
+          y2="25" 
+          stroke="#444" 
+          strokeWidth="1.5" 
           strokeLinecap="round"
         />
         
-        {/* Flame */}
-        <ellipse 
-          cx="40" 
-          cy="15" 
-          rx="8" 
-          ry="12" 
-          fill="url(#flameGradient)" 
-          opacity="0.9"
+        {/* Main flame body */}
+        <path 
+          d="M 50 25 
+             C 45 20, 45 15, 48 12
+             C 50 8, 52 8, 54 12
+             C 55 15, 55 20, 50 25 Z" 
+          fill="url(#mainFlame)" 
+          opacity="0.85"
+          className="flame-main"
         />
         
         {/* Inner flame */}
-        <ellipse 
-          cx="40" 
-          cy="16" 
-          rx="4" 
-          ry="8" 
-          fill="url(#innerFlameGradient)" 
-          opacity="0.8"
+        <path 
+          d="M 50 23 
+             C 47 19, 47 16, 49 14
+             C 50 12, 51 12, 52 14
+             C 53 16, 53 19, 50 23 Z" 
+          fill="url(#innerFlame)" 
+          opacity="0.9"
+          className="flame-inner"
         />
         
-        {/* Flame glow */}
+        {/* Flame core */}
         <ellipse 
-          cx="40" 
-          cy="15" 
-          rx="12" 
-          ry="16" 
-          fill="url(#glowGradient)" 
-          opacity="0.3"
+          cx="50" 
+          cy="19" 
+          rx="2" 
+          ry="4" 
+          fill="url(#flameCore)" 
+          opacity="0.95"
+          className="flame-core"
         />
         
         {/* Gradients */}
         <defs>
-          <radialGradient id="flameGradient" cx="0.5" cy="0.8" r="0.8">
-            <stop offset="0%" stopColor="#ffeb3b" stopOpacity="0.9" />
-            <stop offset="50%" stopColor="#ff9800" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#ff5722" stopOpacity="0.7" />
-          </radialGradient>
-          
-          <radialGradient id="innerFlameGradient" cx="0.5" cy="0.8" r="0.6">
-            <stop offset="0%" stopColor="#fff9c4" stopOpacity="0.9" />
-            <stop offset="70%" stopColor="#ffeb3b" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#ffc107" stopOpacity="0.7" />
-          </radialGradient>
-          
-          <radialGradient id="glowGradient" cx="0.5" cy="0.7" r="1">
-            <stop offset="0%" stopColor="#fff9c4" stopOpacity="0.4" />
-            <stop offset="30%" stopColor="#ffeb3b" stopOpacity="0.3" />
-            <stop offset="70%" stopColor="#ff9800" stopOpacity="0.2" />
+          <radialGradient id="outerGlow" cx="0.5" cy="0.6" r="0.8">
+            <stop offset="0%" stopColor="#fff4e6" stopOpacity="0.8" />
+            <stop offset="40%" stopColor="#ffcc80" stopOpacity="0.4" />
+            <stop offset="70%" stopColor="#ff8f65" stopOpacity="0.2" />
             <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          </radialGradient>
+          
+          <radialGradient id="mainFlame" cx="0.5" cy="0.8" r="0.7">
+            <stop offset="0%" stopColor="#fff8e1" stopOpacity="0.9" />
+            <stop offset="30%" stopColor="#ffcc80" stopOpacity="0.85" />
+            <stop offset="60%" stopColor="#ff8f65" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#d84315" stopOpacity="0.7" />
+          </radialGradient>
+          
+          <radialGradient id="innerFlame" cx="0.5" cy="0.8" r="0.6">
+            <stop offset="0%" stopColor="#fffde7" stopOpacity="0.95" />
+            <stop offset="50%" stopColor="#ffecb3" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#ffcc80" stopOpacity="0.85" />
+          </radialGradient>
+          
+          <radialGradient id="flameCore" cx="0.5" cy="0.7" r="0.5">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.98" />
+            <stop offset="60%" stopColor="#fff8e1" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#ffecb3" stopOpacity="0.9" />
           </radialGradient>
         </defs>
         
-        {/* Flame animation */}
+        {/* Gentle flame animation */}
         <style>
           {`
-            @keyframes flicker {
-              0%, 100% { transform: scale(1) rotate(0deg); }
-              25% { transform: scale(1.05) rotate(-1deg); }
-              50% { transform: scale(0.95) rotate(1deg); }
-              75% { transform: scale(1.02) rotate(-0.5deg); }
+            @keyframes gentleFlicker {
+              0%, 100% { 
+                transform: scale(1, 1) translateY(0px);
+                opacity: 0.85;
+              }
+              25% { 
+                transform: scale(1.02, 0.98) translateY(-0.5px);
+                opacity: 0.9;
+              }
+              50% { 
+                transform: scale(0.98, 1.02) translateY(0.5px);
+                opacity: 0.8;
+              }
+              75% { 
+                transform: scale(1.01, 0.99) translateY(-0.3px);
+                opacity: 0.88;
+              }
             }
             
-            ellipse[fill*="flameGradient"] {
-              animation: flicker 2s ease-in-out infinite;
-              transform-origin: 40px 27px;
+            @keyframes innerFlicker {
+              0%, 100% { 
+                transform: scale(1, 1) translateY(0px);
+                opacity: 0.9;
+              }
+              30% { 
+                transform: scale(1.03, 0.97) translateY(-0.3px);
+                opacity: 0.95;
+              }
+              60% { 
+                transform: scale(0.97, 1.03) translateY(0.3px);
+                opacity: 0.85;
+              }
+              90% { 
+                transform: scale(1.01, 0.99) translateY(-0.2px);
+                opacity: 0.92;
+              }
             }
             
-            ellipse[fill*="innerFlameGradient"] {
-              animation: flicker 2.5s ease-in-out infinite reverse;
-              transform-origin: 40px 27px;
+            @keyframes coreFlicker {
+              0%, 100% { 
+                transform: scale(1, 1);
+                opacity: 0.95;
+              }
+              33% { 
+                transform: scale(1.05, 0.95);
+                opacity: 0.98;
+              }
+              66% { 
+                transform: scale(0.95, 1.05);
+                opacity: 0.92;
+              }
+            }
+            
+            @keyframes glowPulse {
+              0%, 100% { 
+                transform: scale(1, 1);
+                opacity: 0.15;
+              }
+              50% { 
+                transform: scale(1.1, 1.05);
+                opacity: 0.25;
+              }
+            }
+            
+            .flame-main {
+              animation: gentleFlicker 4s ease-in-out infinite;
+              transform-origin: 50px 25px;
+            }
+            
+            .flame-inner {
+              animation: innerFlicker 3.5s ease-in-out infinite;
+              transform-origin: 50px 23px;
+            }
+            
+            .flame-core {
+              animation: coreFlicker 2.8s ease-in-out infinite;
+              transform-origin: 50px 19px;
+            }
+            
+            .flame-glow {
+              animation: glowPulse 5s ease-in-out infinite;
+              transform-origin: 50px 18px;
             }
           `}
         </style>
