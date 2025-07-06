@@ -29,8 +29,8 @@ export function Candle({ className = "" }: CandleProps) {
           width="40" 
           height="80" 
           rx="3" 
-          fill="#f5f5f5" 
-          stroke="#e0e0e0" 
+          fill="#64748b" 
+          stroke="#475569" 
           strokeWidth="0.5"
         />
         
@@ -41,8 +41,8 @@ export function Candle({ className = "" }: CandleProps) {
           width="50" 
           height="25" 
           rx="4" 
-          fill="#f0f0f0" 
-          stroke="#d5d5d5" 
+          fill="#52525b" 
+          stroke="#3f3f46" 
           strokeWidth="0.5"
         />
         
@@ -52,7 +52,7 @@ export function Candle({ className = "" }: CandleProps) {
           y1="35" 
           x2="50" 
           y2="25" 
-          stroke="#444" 
+          stroke="#1f2937" 
           strokeWidth="1.5" 
           strokeLinecap="round"
         />
