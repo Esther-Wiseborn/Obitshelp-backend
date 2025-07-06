@@ -76,7 +76,7 @@ export default function Landing() {
               When words are hard to find, <span className="block mt-4">we help you find the right ones.</span> <span className="block mt-4">Coming soon.</span>
             </h1>
             <p className="text-xl md:text-2xl leading-relaxed text-text-secondary font-normal max-w-2xl mx-auto">
-              ObitsHelp is a guided obituary-writing service that walks families through creating a meaningful, complete tribute — without the stress of starting from a blank page.
+              ObitsHelp is a guided obituary-writing service that walks families through creating a meaningful, complete tribute, without the stress of starting from a blank page.
             </p>
           </header>
           
