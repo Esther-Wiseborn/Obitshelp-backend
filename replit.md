@@ -104,10 +104,16 @@ ObitsHelp.com is a web application designed to help families create meaningful o
 - **Database**: Serverless PostgreSQL via Neon
 - **Session Storage**: PostgreSQL-backed session store
 
-## Changelog
+## Recent Changes
 
-Changelog:
-- July 06, 2025. Initial setup
+- July 06, 2025: Complete landing page redesign
+  - Updated to black/white color palette with soft, respectful styling
+  - Added animated slate candle with flickering flame
+  - Updated headline: "When words are hard to find, we help you find the right ones. Coming soon."
+  - Simplified description to focus on core value proposition
+  - New reinforcing message: "Born of personal experience, created to bring clarity when it's hardest to find."
+  - Integrated PostgreSQL database for persistent email storage
+  - Added rounded corners, ample spacing, and large readable text
 
 ## User Preferences
 
