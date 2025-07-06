@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
 :root {
   --background: hsl(0, 0%, 100%);
@@ -28,14 +28,14 @@
 
   /* Custom properties for ObitsHelp design */
   --glass-white: hsla(0, 0%, 100%, 0.95);
-  --glass-form: hsla(201, 29%, 96%, 0.8);
-  --green-accent: hsl(120, 39%, 64%);
-  --green-hover: hsl(120, 41%, 60%);
-  --text-primary: hsl(210, 22%, 22%);
-  --text-secondary: hsl(214, 13%, 32%);
-  --text-muted: hsl(213, 11%, 52%);
-  --border-light: hsla(214, 32%, 91%, 0.5);
-  --border-white: hsla(0, 0%, 100%, 0.2);
+  --glass-form: hsla(0, 0%, 100%, 0.9);
+  --accent-dark: hsl(0, 0%, 20%);
+  --accent-hover: hsl(0, 0%, 30%);
+  --text-primary: hsl(0, 0%, 10%);
+  --text-secondary: hsl(0, 0%, 25%);
+  --text-muted: hsl(0, 0%, 45%);
+  --border-light: hsla(0, 0%, 80%, 0.5);
+  --border-white: hsla(0, 0%, 90%, 0.3);
 }
 
 .dark {
@@ -89,17 +89,17 @@
   }
 
   .bg-overlay {
-    background: linear-gradient(135deg, hsl(202, 86%, 96%) 0%, hsl(209, 36%, 76%) 100%);
+    background: linear-gradient(135deg, hsl(0, 0%, 98%) 0%, hsl(0, 0%, 92%) 100%);
   }
 
   .bg-candle {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23000" opacity="0.05"/></svg>');
-    background-size: 50px 50px;
-    opacity: 0.05;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23000" opacity="0.02"/></svg>');
+    background-size: 80px 80px;
+    opacity: 0.03;
   }
 
   .border-quote {
-    border-left: 3px solid hsl(213, 11%, 62%);
+    border-left: 3px solid hsl(0, 0%, 60%);
   }
 
   .text-shadow {
@@ -118,34 +118,34 @@
     color: var(--text-muted);
   }
 
-  .border-green-accent {
-    border-color: var(--green-accent);
+  .border-accent-dark {
+    border-color: var(--accent-dark);
   }
 
-  .focus\:border-green-accent:focus {
-    border-color: var(--green-accent);
+  .focus\:border-accent-dark:focus {
+    border-color: var(--accent-dark);
   }
 
-  .focus\:ring-green-accent:focus {
-    --tw-ring-color: var(--green-accent);
+  .focus\:ring-accent-dark:focus {
+    --tw-ring-color: var(--accent-dark);
   }
 
-  .bg-green-accent {
-    background-color: var(--green-accent);
+  .bg-accent-dark {
+    background-color: var(--accent-dark);
   }
 
-  .from-green-accent {
-    --tw-gradient-from: var(--green-accent);
-    --tw-gradient-to: hsla(120, 39%, 64%, 0);
+  .from-accent-dark {
+    --tw-gradient-from: var(--accent-dark);
+    --tw-gradient-to: hsla(0, 0%, 20%, 0);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 
-  .to-green-hover {
-    --tw-gradient-to: var(--green-hover);
+  .to-accent-hover {
+    --tw-gradient-to: var(--accent-hover);
   }
 
-  .hover\:bg-green-accent:hover {
-    background-color: var(--green-accent);
+  .hover\:bg-accent-dark:hover {
+    background-color: var(--accent-dark);
   }
 
   .animate-fade-in {

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { CheckCircle, Mail } from "lucide-react";
+import { Candle } from "@/components/Candle";
 
 type FormData = { email: string };
 
@@ -63,29 +64,34 @@ export default function Landing() {
       
       {/* Main Content */}
       <div className="relative z-10 animate-fade-in">
-        <div className="glass-morphism rounded-3xl shadow-2xl max-w-2xl w-full mx-4 my-8 p-12 md:p-16 text-center animate-slide-up">
+        <div className="glass-morphism rounded-3xl shadow-lg max-w-3xl w-full mx-6 my-10 p-16 md:p-20 text-center animate-slide-up">
+          {/* Candle Visual Element */}
+          <div className="mb-12">
+            <Candle className="mx-auto" />
+          </div>
+          
           {/* Header */}
-          <header className="mb-8">
-            <h1 className="text-text-primary font-light text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight tracking-tight text-shadow">
-              A guided way to honor a life — <span className="block mt-2">coming soon.</span>
+          <header className="mb-12">
+            <h1 className="text-text-primary font-light text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed tracking-wide">
+              A guided way to honor a life — <span className="block mt-4">coming soon.</span>
             </h1>
-            <p className="text-xl md:text-2xl leading-relaxed text-text-secondary font-normal">
+            <p className="text-xl md:text-2xl leading-relaxed text-text-secondary font-normal max-w-2xl mx-auto">
               ObitsHelp is a guided obituary-writing service that walks families through creating a meaningful, complete tribute — without the stress of starting from a blank page.
             </p>
           </header>
           
           {/* Reinforcing Message */}
-          <div className="my-8 md:my-12">
-            <blockquote className="italic text-text-muted text-lg md:text-xl leading-relaxed border-quote pl-6 text-left max-w-lg mx-auto">
+          <div className="my-12 md:my-16">
+            <blockquote className="italic text-text-muted text-xl md:text-2xl leading-relaxed border-quote pl-8 text-left max-w-xl mx-auto">
               Created from personal experience, built to support families in moments that matter.
             </blockquote>
           </div>
           
           {/* Email Signup Form */}
-          <div className="form-glass rounded-2xl p-8 md:p-12 my-8 md:my-12">
+          <div className="form-glass rounded-3xl p-12 md:p-16 my-12 md:my-16">
             {!isSubmitted ? (
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                   <FormField
                     control={form.control}
                     name="email"
@@ -95,7 +101,7 @@ export default function Landing() {
                           <Input
                             placeholder="Enter your email address"
                             type="email"
-                            className="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 rounded-xl focus:border-green-accent focus:ring-4 focus:ring-green-accent focus:ring-opacity-20 transition-all duration-300 outline-none placeholder-gray-400"
+                            className="w-full px-8 py-6 text-xl bg-white border-2 border-gray-300 rounded-2xl focus:border-accent-dark focus:ring-4 focus:ring-accent-dark focus:ring-opacity-10 transition-all duration-300 outline-none placeholder-gray-500"
                             {...field}
                           />
                         </FormControl>
@@ -107,11 +113,11 @@ export default function Landing() {
                   <Button
                     type="submit"
                     disabled={signupMutation.isPending}
-                    className="w-full bg-gradient-to-r from-green-accent to-green-hover text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-accent focus:ring-opacity-20"
+                    className="w-full bg-gradient-to-r from-accent-dark to-accent-hover text-white font-medium text-xl px-12 py-6 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-accent-dark focus:ring-opacity-20"
                   >
                     {signupMutation.isPending ? (
                       <>
-                        <div className="animate-spin -ml-1 mr-3 h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+                        <div className="animate-spin -ml-1 mr-3 h-6 w-6 border-2 border-white border-t-transparent rounded-full"></div>
                         Submitting...
                       </>
                     ) : (
@@ -121,23 +127,23 @@ export default function Landing() {
                 </form>
               </Form>
             ) : (
-              <div className="p-6 bg-green-50 border-2 border-green-200 rounded-xl animate-pulse-success">
-                <div className="flex items-center justify-center text-green-800">
-                  <CheckCircle className="w-6 h-6 mr-3" />
-                  <span className="font-semibold text-lg">Thank you! We'll notify you when we launch.</span>
+              <div className="p-8 bg-white border-2 border-gray-300 rounded-2xl animate-pulse-success">
+                <div className="flex items-center justify-center text-gray-800">
+                  <CheckCircle className="w-8 h-8 mr-4" />
+                  <span className="font-medium text-xl">Thank you! We'll notify you when we launch.</span>
                 </div>
               </div>
             )}
           </div>
           
           {/* Footer */}
-          <footer className="mt-12 md:mt-16">
-            <div className="text-text-muted text-base md:text-lg">
+          <footer className="mt-16 md:mt-20">
+            <div className="text-text-muted text-lg md:text-xl">
               <a 
                 href="mailto:contact@obitshelp.com" 
-                className="inline-flex items-center text-text-secondary hover:text-text-primary bg-transparent hover:bg-green-accent hover:bg-opacity-10 px-6 py-3 rounded-xl transition-all duration-300 font-medium"
+                className="inline-flex items-center text-text-secondary hover:text-text-primary bg-transparent hover:bg-gray-100 px-8 py-4 rounded-2xl transition-all duration-300 font-medium border border-gray-300"
               >
-                <Mail className="w-5 h-5 mr-2" />
+                <Mail className="w-6 h-6 mr-3" />
                 Contact Us
               </a>
             </div>
