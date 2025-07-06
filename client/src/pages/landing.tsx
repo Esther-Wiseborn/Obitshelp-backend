@@ -83,7 +83,7 @@ export default function Landing() {
           {/* Reinforcing Message */}
           <div className="my-12 md:my-16">
             <blockquote className="italic text-text-muted text-xl md:text-2xl leading-relaxed border-quote pl-8 text-left max-w-xl mx-auto">
-              Created from personal experience, built to support families in moments that matter.
+              Born of personal experience, created to bring clarity when it's hardest to find.
             </blockquote>
           </div>
           
