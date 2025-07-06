@@ -1,4 +1,6 @@
 import { users, emailSignups, type User, type InsertUser, type EmailSignup, type InsertEmailSignup } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -9,57 +11,41 @@ export interface IStorage {
   getAllEmailSignups(): Promise<EmailSignup[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private emailSignups: Map<number, EmailSignup>;
-  private emailSignupsByEmail: Map<string, EmailSignup>;
-  private currentUserId: number;
-  private currentEmailSignupId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.emailSignups = new Map();
-    this.emailSignupsByEmail = new Map();
-    this.currentUserId = 1;
-    this.currentEmailSignupId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createEmailSignup(insertEmailSignup: InsertEmailSignup): Promise<EmailSignup> {
-    const id = this.currentEmailSignupId++;
-    const emailSignup: EmailSignup = { 
-      ...insertEmailSignup, 
-      id, 
-      createdAt: new Date() 
-    };
-    this.emailSignups.set(id, emailSignup);
-    this.emailSignupsByEmail.set(emailSignup.email, emailSignup);
+    const [emailSignup] = await db
+      .insert(emailSignups)
+      .values(insertEmailSignup)
+      .returning();
     return emailSignup;
   }
 
   async getEmailSignupByEmail(email: string): Promise<EmailSignup | undefined> {
-    return this.emailSignupsByEmail.get(email);
+    const [emailSignup] = await db.select().from(emailSignups).where(eq(emailSignups.email, email));
+    return emailSignup || undefined;
   }
 
   async getAllEmailSignups(): Promise<EmailSignup[]> {
-    return Array.from(this.emailSignups.values());
+    return await db.select().from(emailSignups);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
