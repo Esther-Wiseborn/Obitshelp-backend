@@ -73,7 +73,7 @@ export default function Landing() {
           {/* Header */}
           <header className="mb-12">
             <h1 className="text-text-primary font-light text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed tracking-wide">
-              When words are hard to find, <span className="block mt-4">we help you find the right ones.</span> <span className="block mt-4">Coming soon.</span>
+              ObitsHelp.com is a guided service to help you find the right words. <span className="block mt-4">Coming soon.</span>
             </h1>
             <p className="text-xl md:text-2xl leading-relaxed text-text-secondary font-normal max-w-2xl mx-auto">
               ObitsHelp is a guided obituary-writing service that walks families through creating a meaningful tribute.
