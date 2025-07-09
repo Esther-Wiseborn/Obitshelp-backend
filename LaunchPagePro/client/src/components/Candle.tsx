@@ -19,21 +19,8 @@ export function Candle({ className = "" }: CandleProps) {
           ry="30" 
           fill="url(#outerGlow)" 
           opacity="0.15"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.15;0.25;0.15"
-            dur="5s"
-            repeatCount="indefinite"
-          />
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            values="1,1;1.1,1.05;1,1"
-            dur="5s"
-            repeatCount="indefinite"
-          />
-        </ellipse>
+          className="flame-glow"
+        />
         
         {/* Candle body */}
         <rect 
@@ -78,25 +65,8 @@ export function Candle({ className = "" }: CandleProps) {
              C 55 15, 55 20, 50 25 Z" 
           fill="url(#mainFlame)" 
           opacity="0.85"
-          style={{
-            animation: 'gentleFlicker 4s ease-in-out infinite',
-            transformOrigin: '50px 18px'
-          }}
-        >
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            values="1,1;1.02,0.98;0.98,1.02;1.01,0.99;1,1"
-            dur="4s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="opacity"
-            values="0.85;0.9;0.8;0.88;0.85"
-            dur="4s"
-            repeatCount="indefinite"
-          />
-        </path>
+          className="flame-main"
+        />
         
         {/* Inner flame */}
         <path 
@@ -106,25 +76,8 @@ export function Candle({ className = "" }: CandleProps) {
              C 53 16, 53 19, 50 23 Z" 
           fill="url(#innerFlame)" 
           opacity="0.9"
-          style={{
-            animation: 'innerFlicker 3.5s ease-in-out infinite',
-            transformOrigin: '50px 18px'
-          }}
-        >
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            values="1,1;1.03,0.97;0.97,1.03;1.01,0.99;1,1"
-            dur="3.5s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="opacity"
-            values="0.9;0.95;0.85;0.92;0.9"
-            dur="3.5s"
-            repeatCount="indefinite"
-          />
-        </path>
+          className="flame-inner"
+        />
         
         {/* Flame core */}
         <ellipse 
@@ -134,25 +87,8 @@ export function Candle({ className = "" }: CandleProps) {
           ry="4" 
           fill="url(#flameCore)" 
           opacity="0.95"
-          style={{
-            animation: 'coreFlicker 2.8s ease-in-out infinite',
-            transformOrigin: '50px 19px'
-          }}
-        >
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            values="1,1;1.05,0.95;0.95,1.05;1,1"
-            dur="2.8s"
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="opacity"
-            values="0.95;0.98;0.92;0.95"
-            dur="2.8s"
-            repeatCount="indefinite"
-          />
-        </ellipse>
+          className="flame-core"
+        />
         
         {/* Gradients */}
         <defs>
