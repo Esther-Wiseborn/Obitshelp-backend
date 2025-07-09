@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertEmailSignupSchema } from "@shared/schema";
 import { z } from "zod";
+import path from "path";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Email signup endpoint
@@ -56,6 +57,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
         message: "An error occurred while fetching signups" 
       });
     }
+  });
+
+  // Download endpoint for source code
+  app.get("/download/source", (req, res) => {
+    const filePath = path.join(process.cwd(), "obitshelp-source-code.zip");
+    res.download(filePath, "obitshelp-source-code.zip", (err) => {
+      if (err) {
+        console.error("Download error:", err);
+        res.status(404).json({ error: "File not found" });
+      }
+    });
   });
 
   const httpServer = createServer(app);
