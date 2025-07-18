@@ -26,7 +26,7 @@ export default function Landing() {
 
   const signupMutation = useMutation({
     mutationFn: async (data: FormData) => {
-      const response = await apiRequest("POST", "/api/signup", data);
+      const response = await apiRequest("POST", "https://zerobitshelp.onrender.com/api/signup", data);
       return response.json();
     },
     onSuccess: (data) => {
