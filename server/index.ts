@@ -71,4 +71,3 @@ app.use((req, res, next) => {
     },
   );
 })();
-npm install cors
