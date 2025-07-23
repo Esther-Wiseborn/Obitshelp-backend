@@ -1,8 +1,14 @@
+import cors from "cors";
 import express from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors()); // <--- THIS is the missing line
+
+// Handle JSON and form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -20,5 +26,3 @@ app.use(express.urlencoded({ extended: false }));
     log(`serving on port ${port}`);
   });
 })();
-
-
