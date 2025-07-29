@@ -81,12 +81,23 @@ export default function Landing() {
           </div>
           
           {/* Logo */}
-          <div className="mb-12">
-            <img 
-              src="/obitshelp-logo.png" 
-              alt="ObitsHelp Logo" 
-              className="mx-auto w-80 h-auto opacity-90"
-            />
+          <div className="mb-12 relative">
+            <div className="relative mx-auto w-80 h-auto">
+              <img 
+                src="/obitshelp-logo.png" 
+                alt="ObitsHelp Logo" 
+                className="w-full h-auto opacity-90 relative z-10"
+              />
+              <div 
+                className="absolute inset-0 opacity-20 mix-blend-multiply rounded-lg"
+                style={{
+                  backgroundImage: "url('/brand-pattern.png')",
+                  backgroundRepeat: "repeat",
+                  backgroundSize: "60px 60px",
+                  backgroundPosition: "center"
+                }}
+              ></div>
+            </div>
           </div>
           
           {/* Header */}
