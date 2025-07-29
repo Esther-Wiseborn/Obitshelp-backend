@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { CheckCircle, Mail } from "lucide-react";
-import { Candle } from "@/components/Candle";
+
 
 type FormData = { email: string };
 
@@ -26,7 +26,11 @@ export default function Landing() {
 
   const signupMutation = useMutation({
     mutationFn: async (data: FormData) => {
-      const response = await apiRequest("POST", "https://zerobitshelp.onrender.com/api/signup", data);
+      const response = await apiRequest(
+  "POST",
+  "https://c7bf4485-daaf-4559-9aaf-cffd0f5d8f2b-00-1236lcyd0h76v.riker.replit.dev/api/signup",
+  data
+);
       return response.json();
     },
     onSuccess: (data) => {
@@ -65,9 +69,13 @@ export default function Landing() {
       {/* Main Content */}
       <div className="relative z-10 animate-fade-in">
         <div className="glass-morphism rounded-3xl shadow-lg max-w-3xl w-full mx-6 my-10 p-16 md:p-20 text-center animate-slide-up">
-          {/* Candle Visual Element */}
+          {/* Logo */}
           <div className="mb-12">
-            <Candle className="mx-auto" />
+            <img 
+              src="/obitshelp-logo.png" 
+              alt="ObitsHelp Logo" 
+              className="mx-auto w-80 h-auto opacity-90"
+            />
           </div>
           
           {/* Header */}
