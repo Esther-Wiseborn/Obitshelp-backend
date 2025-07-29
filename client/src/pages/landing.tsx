@@ -93,7 +93,7 @@ export default function Landing() {
                 style={{
                   backgroundImage: "url('/brand-pattern.png')",
                   backgroundRepeat: "repeat",
-                  backgroundSize: "120px 120px",
+                  backgroundSize: "300px 300px",
                   backgroundPosition: "center"
                 }}
               ></div>
