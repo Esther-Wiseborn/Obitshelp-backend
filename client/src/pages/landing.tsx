@@ -73,6 +73,13 @@ export default function Landing() {
       {/* Main Content */}
       <div className="relative z-10 animate-fade-in">
         <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl max-w-3xl w-full mx-6 my-10 p-16 md:p-20 text-center animate-slide-up border border-gray-200/50">
+          {/* Coming Soon Badge */}
+          <div className="mb-8">
+            <span className="inline-block px-6 py-2 bg-gray-100 text-gray-600 text-sm font-medium rounded-full border border-gray-200">
+              Coming Soon
+            </span>
+          </div>
+          
           {/* Logo */}
           <div className="mb-12">
             <img 
@@ -85,10 +92,10 @@ export default function Landing() {
           {/* Header */}
           <header className="mb-12">
             <h1 className="text-gray-900 font-light text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed tracking-wide">
-              ObitsHelp.com is a guided service to help you find the right words. <span className="block mt-4">Coming soon.</span>
+              Honoring Lives,<br />Preserving Memories
             </h1>
             <p className="text-xl md:text-2xl leading-relaxed text-gray-700 font-normal max-w-2xl mx-auto">
-              ObitsHelp is a guided obituary-writing service that walks families through creating a meaningful tribute.
+              ObitsHelp is revolutionizing how we create, share, and preserve obituaries. A compassionate platform designed to celebrate lives and support families during difficult times.
             </p>
           </header>
           
