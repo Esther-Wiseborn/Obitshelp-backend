@@ -62,13 +62,17 @@ export default function Landing() {
   };
 
   return (
-    <div className="font-opensans bg-overlay text-text-secondary min-h-screen flex items-center justify-center relative">
-      {/* Background Overlay */}
-      <div className="fixed inset-0 bg-candle pointer-events-none"></div>
+    <div className="font-opensans min-h-screen flex items-center justify-center relative" style={{
+      backgroundImage: "url('/brand-pattern.png')",
+      backgroundRepeat: "repeat",
+      backgroundSize: "300px 300px"
+    }}>
+      {/* Background Overlay for content readability */}
+      <div className="fixed inset-0 bg-black/20 pointer-events-none"></div>
       
       {/* Main Content */}
       <div className="relative z-10 animate-fade-in">
-        <div className="glass-morphism rounded-3xl shadow-lg max-w-3xl w-full mx-6 my-10 p-16 md:p-20 text-center animate-slide-up">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl max-w-3xl w-full mx-6 my-10 p-16 md:p-20 text-center animate-slide-up border border-gray-200/50">
           {/* Logo */}
           <div className="mb-12">
             <img 
@@ -80,17 +84,17 @@ export default function Landing() {
           
           {/* Header */}
           <header className="mb-12">
-            <h1 className="text-text-primary font-light text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed tracking-wide">
+            <h1 className="text-gray-900 font-light text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed tracking-wide">
               ObitsHelp.com is a guided service to help you find the right words. <span className="block mt-4">Coming soon.</span>
             </h1>
-            <p className="text-xl md:text-2xl leading-relaxed text-text-secondary font-normal max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl leading-relaxed text-gray-700 font-normal max-w-2xl mx-auto">
               ObitsHelp is a guided obituary-writing service that walks families through creating a meaningful tribute.
             </p>
           </header>
           
           {/* Reinforcing Message */}
           <div className="my-12 md:my-16">
-            <blockquote className="italic text-text-muted text-xl md:text-2xl leading-relaxed border-quote pl-8 text-left max-w-xl mx-auto">
+            <blockquote className="italic text-gray-600 text-xl md:text-2xl leading-relaxed border-l-4 border-gray-300 pl-8 text-left max-w-xl mx-auto">
               Born of personal experience, created to bring clarity when it's hardest to find.
             </blockquote>
           </div>
@@ -137,7 +141,7 @@ export default function Landing() {
             ) : (
               <div className="p-8 bg-white border-2 border-gray-300 rounded-2xl animate-pulse-success">
                 <div className="flex items-center justify-center text-gray-800">
-                  <CheckCircle className="w-8 h-8 mr-4" />
+                  <CheckCircle className="w-8 h-8 mr-4 text-green-600" />
                   <span className="font-medium text-xl">Thank you! We'll notify you when we launch.</span>
                 </div>
               </div>
@@ -146,7 +150,7 @@ export default function Landing() {
           
           {/* Footer */}
           <footer className="mt-16 md:mt-20">
-            <div className="text-text-muted text-lg md:text-xl">
+            <div className="text-gray-500 text-lg md:text-xl">
               <a 
                 href="mailto:contact@obitshelp.com" 
                 className="inline-flex items-center text-text-secondary hover:text-text-primary bg-transparent hover:bg-gray-100 px-8 py-4 rounded-2xl transition-all duration-300 font-medium border border-gray-300"
