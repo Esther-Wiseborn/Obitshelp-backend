@@ -73,11 +73,11 @@ export default function Landing() {
       {/* Main Content */}
       <div className="relative z-10 animate-fade-in">
         <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl max-w-3xl w-full mx-6 my-10 p-16 md:p-20 text-center animate-slide-up border border-gray-200/50">
-          {/* Coming Soon Badge */}
+          {/* Coming Soon */}
           <div className="mb-8">
-            <span className="inline-block px-6 py-2 bg-gray-100 text-gray-600 text-sm font-medium rounded-full border border-gray-200">
+            <p className="text-gray-500 text-lg font-light tracking-wide">
               Coming Soon
-            </span>
+            </p>
           </div>
           
           {/* Logo */}
@@ -93,7 +93,7 @@ export default function Landing() {
                 style={{
                   backgroundImage: "url('/brand-pattern.png')",
                   backgroundRepeat: "repeat",
-                  backgroundSize: "60px 60px",
+                  backgroundSize: "120px 120px",
                   backgroundPosition: "center"
                 }}
               ></div>
