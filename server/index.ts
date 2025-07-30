@@ -12,10 +12,30 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// === TEST ROUTE ===
+app.get("/api/test-db", async (req, res) => {
+  try {
+    const { db } = await import("./db");
+    const result = await db.execute("SELECT 1;");
+    res.json({ success: true, result });
+  } catch (err) {
+    console.error("DB Connection Test Error:", err);
+    res.status(500).json({ success: false, error: String(err) });
+  }
+});
+
 async function startServer() {
   try {
     // Register all API routes
-    const server = await registerRoutes(app);
+    // Quick sanity route
+app.get("/ping", (req, res) => res.send("pong"));
+
+// Register all API routes
+// Quick sanity route
+app.get("/ping", (req, res) => res.send("pong"));
+
+// Register all API routes
+const server = await registerRoutes(app);
 
     // Serve static files or Vite in dev
     if (app.get("env") === "development") {

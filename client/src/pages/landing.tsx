@@ -106,7 +106,7 @@ export default function Landing() {
               Honoring Lives,<br />Preserving Memories
             </h1>
             <p className="text-xl md:text-2xl leading-relaxed text-gray-700 font-normal max-w-2xl mx-auto">
-              ObitsHelp is revolutionizing how we create, share, and preserve obituaries. A compassionate platform designed to celebrate lives and support families during difficult times.
+              ObitsHelp is a guided obituary-writing service that walks families through creating a meaningful, complete tribute — without the stress of starting from a blank page. A compassionate platform designed to celebrate lives and support families during difficult times.
             </p>
           </header>
           
